@@ -5,7 +5,7 @@ import dummyData from "./instagram/src/dummy-data";
 import SearchBar from "../src/components/SearchBar/SearchBar";
 import PostContainer from "../src/components/PostContainer/PostContainer";
 
-class App extends React.Component() {
+class App extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -17,8 +17,8 @@ class App extends React.Component() {
     return (
       <div className="App">
         <SearchBar />
-        {this.state.dummyData.map(data => (
-          <PostContainer data={data} />
+        {this.state.dummyData.map(post => (
+          <PostContainer post={post} key={post.id} />
         ))}
       </div>
     );

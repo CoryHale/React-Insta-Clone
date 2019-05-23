@@ -1,13 +1,21 @@
 import React from "react";
 import "./PostContainer.css";
 
-// import CommentSection from "../CommentSection/CommentSection";
+import Post from "./Post"
+import CommentSection from "../CommentSection/CommentSection";
 
 const PostContainer = props => {
     return (
-        <div>
-
-        </div>
+        <>
+            <Post 
+                username={props.username}
+                thumbnailUrl={props.thumbnailUrl}
+                imageUrl={props.imageUrl}
+                likes={props.likes}
+                // timestamp={props.timestamp}
+            />
+            <CommentSection comments={props.comments} />
+        </>
     )
 }
 
