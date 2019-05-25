@@ -6,16 +6,18 @@ import CommentSection from "../CommentSection/CommentSection";
 
 const PostContainer = props => {
     return (
-        <>
-            <Post 
-                username={props.username}
-                thumbnailUrl={props.thumbnailUrl}
-                imageUrl={props.imageUrl}
-                likes={props.likes}
-                // timestamp={props.timestamp}
+        <div className="postContainer">
+            <Post
+                username={props.post.username}
+                thumbnailUrl={props.post.thumbnailUrl}
+                imageUrl={props.post.imageUrl}
+                likes={props.post.likes}
+                // timestamp={props.post.timestamp}
             />
-            <CommentSection comments={props.comments} />
-        </>
+            <div className="commentSection">
+                <CommentSection comments={props.post.comments} />
+            </div>
+        </div>
     )
 }
 
