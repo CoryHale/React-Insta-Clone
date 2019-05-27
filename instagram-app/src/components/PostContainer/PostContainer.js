@@ -12,7 +12,7 @@ const PostContainer = props => {
                 thumbnailUrl={props.post.thumbnailUrl}
                 imageUrl={props.post.imageUrl}
                 likes={props.post.likes}
-                // timestamp={props.post.timestamp}
+                timestamp={props.post.timestamp}
             />
             <div className="commentSection">
                 <CommentSection comments={props.post.comments} />
