@@ -1,35 +1,26 @@
 import React from 'react';
 import './App.css';
 
-import dummyData from "./dummy-data";
-import SearchBar from "../src/components/SearchBar/SearchBar";
-import PostContainer from "../src/components/PostContainer/PostContainer";
+import PostsPage from "./components/PostContainer/PostsPage";
+import Login from "./components/Login/Login";
+import withAuthenticate from "./authentication/withAuthenticate";
+
+const ComponentFromWithAuthenticate = withAuthenticate(PostsPage)(Login);
 
 class App extends React.Component {
   constructor() {
     super();
-    this.state = {
-      dummyData: []
-    }
-  }
-
-  componentDidMount() {
-    console.log("CDM running");
-    this.setState({ dummyData: dummyData })
+    this.state = {}
   }
 
   render() {
     return (
       <div className="App">
-        <SearchBar />
-        <div className="postContainers">
-          {this.state.dummyData.map(post => (
-            <PostContainer post={post} key={post.id} />
-          ))}
-        </div>
+        <ComponentFromWithAuthenticate />
       </div>
     );
   }
 }
 
 export default App;
+

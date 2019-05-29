@@ -8,9 +8,13 @@ class CommentSection extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            comments: props.comments,
+            comments: [],
             newComment: ""
         }
+    }
+
+    componentDidMount() {
+        this.setState({ comments: this.props.comments })
     }
 
     changeHandler = e => {

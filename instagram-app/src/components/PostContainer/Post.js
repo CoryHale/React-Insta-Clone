@@ -6,17 +6,28 @@ class Post extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            thumbnailUrl: props.thumbnailUrl,
-            username: props.username,
-            imageUrl: props.imageUrl,
-            likes: props.likes
+            thumbnailUrl: "",
+            username: "",
+            imageUrl: "",
+            likes: null,
+            liked: false
         }
+    }
+
+    componentDidMount() {
+        this.setState({
+            thumbnailUrl: this.props.thumbnailUrl,
+            username: this.props.username,
+            imageUrl: this.props.imageUrl,
+            likes: this.props.likes,
+        })
     }
 
     likePost = e => {
         e.preventDefault();
-        const newLikes = this.state.likes + 1;
-        this.setState({ likes: newLikes })
+        let amount = (this.state.liked ? -1 : 1)
+        this.setState( prevState => {
+            return { likes: prevState.likes + amount, liked: !prevState.liked }})
     }
 
     render() {
@@ -29,7 +40,7 @@ class Post extends React.Component {
                 <img src={this.state.imageUrl} alt="Uploaded post"></img>
                 <div className="lowerSection">
                     <div className="icons">
-                        <i className="fal fa-heart" onClick={this.likePost}></i>
+                        <i className={this.state.liked ? "fas fa-heart fill" : "fal fa-heart"} onClick={this.likePost}></i>
                         <i className="fal fa-comment"></i>
                     </div>
                     <h3 className="likes">{this.state.likes} likes</h3>
