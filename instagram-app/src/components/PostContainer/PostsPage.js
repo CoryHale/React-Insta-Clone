@@ -9,12 +9,13 @@ class PostsPage extends React.Component {
         super(props);
         this.state = {
             dummyData: [],
+            username: ""
         }
     }
 
     componentDidMount() {
         console.log("CDM running");
-        this.setState({ dummyData: dummyData });
+        this.setState({ dummyData: dummyData, username: this.props.username });
     }
 
     render() {
@@ -23,7 +24,7 @@ class PostsPage extends React.Component {
                 <SearchBar />
                 <div className="postContainers">
                 {this.state.dummyData.map(post => (
-                    <PostContainer post={post} key={post.id} />
+                    <PostContainer post={post} username={this.state.username} key={post.id} />
                 ))}
                 </div>
             </>

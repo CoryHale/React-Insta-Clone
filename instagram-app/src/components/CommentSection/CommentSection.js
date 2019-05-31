@@ -9,12 +9,13 @@ class CommentSection extends React.Component {
         super(props);
         this.state = {
             comments: [],
-            newComment: ""
+            newComment: "",
+            username: ""
         }
     }
 
     componentDidMount() {
-        this.setState({ comments: this.props.comments })
+        this.setState({ comments: this.props.comments, username: this.props.username })
     }
 
     changeHandler = e => {
@@ -24,7 +25,7 @@ class CommentSection extends React.Component {
     addNewComment = e => {
         e.preventDefault();
         const comment = {
-            username: "Lambda4Life",
+            username: this.state.username,
             text: this.state.newComment
         }
         this.setState({
