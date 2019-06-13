@@ -1,0 +1,13 @@
+.postContainer {
+    width: 640px;
+    margin: 20px 0;
+    border: 1px solid lightgray;
+    border-radius: 2px;
+}
+
+.commentSection {
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}

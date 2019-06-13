@@ -1,0 +1,40 @@
+.heading {
+    display: flex;
+    align-items: center;
+}
+
+.heading img {
+    width: 30px;
+    border-radius: 50%;
+    margin: 20px 10px;
+}
+
+.heading h3 {
+    font-size: 15px;
+}
+
+.lowerSection {
+    padding: 10px 15px 0 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.lowerSection i {
+    font-size: 24px;
+}
+
+.lowerSection i:first-child {
+    margin-right: 15px;
+}
+
+.lowerSection h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.fill {
+    color: red;
+}
