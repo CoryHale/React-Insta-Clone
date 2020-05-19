@@ -31,6 +31,7 @@ class Login extends React.Component {
                 <div className="welcome">
                     <h1 className="loginHeader">Welcome to Instagram Clone</h1>
                     <h3 className="loginTag">Login</h3>
+                    <p className="loginTag">HINT: Just enter anything into the username and password</p>
                     <form className="loginForm" onSubmit={this.login}>
                         <div className="inputs">
                             <input type="text" name="username" value={this.state.username} onChange={this.changeHandler} placeholder="username" />
